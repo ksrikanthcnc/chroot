@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+echo "Run from chroot-ed environment"
+# set -x
+echo "Removing binary $1. Libraries remain"
+
+if ! [ -d "trash" ]
+then
+    mkdir trash
+fi
+
+mv "$(which $@)" trash
+
